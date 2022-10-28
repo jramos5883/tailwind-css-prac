@@ -1,11 +1,22 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [],
+  purge: {
+    enabled: true,
+    content: ["./dist/**/*.html"],
+  },
+  darkMode: "class",
   theme: {
     debugScreens: {
       position: ["top", "left"],
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        headline: ["Oswald"],
+      },
+      colors: {
+        mainColor: "#212f49",
+      },
+    },
   },
   plugins: [require("tailwindcss-debug-screens")],
 };
